@@ -26,5 +26,13 @@ public class Main {
         persona1.setEstadoCivil(EstadoCivil.getEstadoCivil(codigo));
         System.out.println("Persona 1 (actualizada): " + persona1);
 
+        /**
+         * Implementar un enum de Nación o País (ARGENTINA, BOLIVIA, ...) con al menos 10 nacionalidades
+         * y asociados con (código país, código teléfono)
+         * El Enum se debe declarar como variable de clase Persona
+         * Crear una nueva instancia de persona con el enum Nacionalidad y posteriormente modificar la nacionaliad
+         * (3 puntos) (8 minutos)
+         */
+
     }
 }
