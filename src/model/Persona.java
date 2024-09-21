@@ -2,11 +2,20 @@ package model;
 
 import enumerator.EstadoCivil;
 
+import java.util.Objects;
+
 public class Persona {
     private Integer ci;
     private String nombres;
     private String apellidos;
     private EstadoCivil estadoCivil;
+
+    public Persona() {
+    }
+
+    public Persona(Integer ci) {
+        this.ci = ci;
+    }
 
     public Integer getCi() {
         return ci;
@@ -47,7 +56,19 @@ public class Persona {
                 ", nombres='" + nombres + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", estadoCivil=" + estadoCivil +
-                ", codigoEstadoCivil=" + estadoCivil.getCodigoEstadoCivil() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Persona persona = (Persona) o;
+        return Objects.equals(ci, persona.ci) && Objects.equals(nombres, persona.nombres) && Objects.equals(apellidos, persona.apellidos) && estadoCivil == persona.estadoCivil;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ci, nombres, apellidos, estadoCivil);
     }
 }
